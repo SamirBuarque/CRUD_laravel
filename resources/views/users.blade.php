@@ -43,7 +43,9 @@
                     <th scope="col">Email</th>
                     <th scope="col">CPF</th>
                     <th scope="col">Telefone</th>
+                    @if(auth()->user()->administrador)
                     <th scope="col">Administrador</th>
+                    @endif
                 </tr>
             </thead>
             <tbody>
@@ -54,7 +56,9 @@
                     <td class="align-middle">{{$user->email}}</td>
                     <td class="align-middle cpf">{{$user->cpf}}</td>
                     <td class="align-middle telefone">{{$user->telefone}}</td>
-                    <td class="align-middle">{{$user->administrador_display}}</td>
+                    @if(auth()->user()->administrador)
+                    <td class="align-middle">{{ $user->administrador ? 'SIM' : 'NÃO' }}</td>
+                    @endif
                     @if($currentUser)
                     <td class="align-middle"><a href="{{ route('users.edit', ['user' => $user->id]) }}" class="btn btn-outline-primary">Editar</a></td>
                     @endif

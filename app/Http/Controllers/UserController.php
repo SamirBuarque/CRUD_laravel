@@ -22,12 +22,17 @@ class UserController extends Controller
     {
         $currentUser = $this->authenticatedUser;
 
-        $users = $this->user->paginate(10);
+        $users = $this->user->where(function($qry){
+            if(!auth()->user()->administrador) {
+                $qry->where('administrador', 0);
+            }
+        })->paginate(10);
 
+        /*
         foreach ($users as $user) {
             $user->administrador_display = $user->administrador ? 'SIM' : 'NÃO';
         }
-
+        */
         return view('users', compact('users', 'currentUser'));
     }
 
