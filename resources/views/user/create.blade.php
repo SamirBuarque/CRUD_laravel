@@ -4,7 +4,9 @@
 
 <div class="row">
     <div class="col-6 mx-auto">
-        <h1>Create</h1>
+        <div class="d-flex align-items-center justify-content-center mt-3">
+            <h2>Cadastro</h2>
+        </div>
         <form action="{{ route('users.store')}}" method="post">
             @csrf
             <div class="mb-3">
@@ -54,17 +56,13 @@
                     <li>
                         Sua senha deve ter no mínimo 8 caracteres
                     </li>
-                    <li>Conter pelo menos uma letra</li>
-                    <li>Conter pelo menos um número</li>
+                    <li>Conter pelo menos uma letra e um número</li>
                 </ul>
             </div>
-            @if($currentUser)
-            <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="administrador" name="administrador">
-                <label class="form-check-label" for="exampleCheck1">Administrador</label>
+            <div class="d-flex align-items-center justify-content-center">
+                <button type="submit" class="btn btn-lg btn-primary me-5">Enviar</button>
+                <a href="{{ route('login') }}">Já possui conta?</a>
             </div>
-            @endif
-            <button type="submit" class="btn btn-primary">Enviar</button>
         </form>
     </div>
 </div>

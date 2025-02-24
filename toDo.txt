@@ -1,7 +1,7 @@
--> usuário deslogado não vê a rota users/
--> usuários comuns não cadastram adm nem editam nem adiciona adm
--> usuário comum não vê a coluna adm
--> primeira tela é a de login
--> mudar os headers Edit e Create
--> adicionar botão de voltar nas telas de login e create
--> link de cadastro no login
+-> usuário deslogado não vê a rota users/ (DONE)
+-> usuários comuns não cadastram adm nem editam nem adiciona adm (DONE)
+-> usuário comum não vê a coluna adm (DONE)
+-> primeira tela é a de login (DONE)
+-> mudar os headers Edit e Create (DONE)
+-> adicionar botão de voltar nas telas de login e create (DONE)
+-> link de cadastro no login (DONE)

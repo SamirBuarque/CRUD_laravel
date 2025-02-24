@@ -23,7 +23,7 @@ class UserController extends Controller
         $currentUser = $this->authenticatedUser;
 
         $users = $this->user->where(function($qry){
-            if(!auth()->user()->administrador) {
+            if(!Auth::user()->administrador) {
                 $qry->where('administrador', 0);
             }
         })->paginate(10);
@@ -79,7 +79,6 @@ class UserController extends Controller
                 'cpf' => preg_replace('/\D/', '', $request->input('cpf')), // retirando a máscara do cpf e telefone para armazenar no banco
                 'telefone' => preg_replace('/\D/', '', $request->input('telefone')),
                 'password' => password_hash($request->input('password'), PASSWORD_DEFAULT),
-                'administrador' => $request->has('administrador'),
             ]);
         }
         if ($created) {

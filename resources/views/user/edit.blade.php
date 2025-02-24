@@ -4,7 +4,9 @@
 
 <div class="row">
     <div class="col-6 mx-auto">
-        <h1>Edit</h1>
+        <div class="d-flex justify-content-center align-items-center mt-3">
+            <h1>Editar usuário</h1>
+        </div>
         <form action="{{ route('users.update', ['user' => $user->id]) }}" method="post">
             @csrf
             <input type="hidden" name="_method" value="PUT">
@@ -24,16 +26,20 @@
                 <label class="form-label">Telefone</label>
                 <input class="form-control" type="text" name="telefone" value="{{$user->telefone}}">
             </div>
-            <button type="submit" class="btn btn-primary">Enviar</button>
+            <div class="d-flex align-items-center justify-content-center">
+                <button type="submit" class="btn btn-lg btn-primary">Enviar</button>
+                <a href="{{ route('users.index') }}" class="btn btn-lg btn-secondary ms-5">Voltar</a>
+            </div>
         </form>
     </div>
 </div>
 @if(session()->has('message'))
-    <div class="row mt-3">
-        <div class="col-3 alert alert-success d-flex justify-content-center" role="alert">
-            <span >{{session()->get('message')}}</span>
-        </div>
+<div class="row mt-3 d-flex justify-content-center align-items-center">
+    <div class="col-3 alert alert-success alert-dismissible fade show" role="alert">
+        <strong>{{session()->get('message')}}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
+</div>
 
 @endif
 

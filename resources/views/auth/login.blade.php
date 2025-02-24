@@ -18,9 +18,12 @@
                 <input class="form-control" type="password" name="password">
             </div>
             <div class="d-flex align-items-center justify-content-center mb-5">
-                <button class="btn btn-primary">Confirm</button>
+                <button class="btn btn-lg btn-primary">Enviar</button>
+                <a class="ms-5" href="{{ route('users.create') }}">Cadastre-se</a>
             </div>
+
         </form>
+
     </div>
     @if (session()->has('message'))
     <div class="row mt-3">

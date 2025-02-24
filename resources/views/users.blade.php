@@ -58,9 +58,8 @@
                     <td class="align-middle telefone">{{$user->telefone}}</td>
                     @if(auth()->user()->administrador)
                     <td class="align-middle">{{ $user->administrador ? 'SIM' : 'NÃO' }}</td>
-                    @endif
-                    @if($currentUser)
-                    <td class="align-middle"><a href="{{ route('users.edit', ['user' => $user->id]) }}" class="btn btn-outline-primary">Editar</a></td>
+                    <td class="align-middle"><a href="{{ route('users.edit', ['user' => $user->id]) }}"
+                    class="btn btn-outline-primary">Editar</a></td>
                     @endif
                     <td class="align-middle"><a href="{{ route('users.show', ['user' => $user->id]) }}" class="btn btn-outline-secondary">Detalhes</a></td>
                 </tr>

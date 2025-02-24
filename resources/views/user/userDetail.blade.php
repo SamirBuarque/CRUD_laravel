@@ -8,7 +8,7 @@
             <h1 class="mt-5">Detalhes do usuário</h1>
             <div class="d-flex align-items-center">
                 <h2 class="mt-5 mb-5">{{$user->name}}</h2>
-                @if($currentUser)
+                @if(auth()->user()->administrador)
                     <form class="ms-5" action="{{ route('users.destroy', ['user' => $user->id]) }}" method="post">
                         @csrf
                         <input type="hidden" name="_method" value="DELETE">
